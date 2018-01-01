@@ -18,6 +18,8 @@ git clone https://github.com/richard-martens/node-portraits.git
 
 npm install 
 ```
+Rewuirements:
+* node >= v4.0
 
 ## start
 
