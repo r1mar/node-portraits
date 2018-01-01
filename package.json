@@ -1,0 +1,31 @@
+{
+  "name": "nodepage",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./src/bin/www",
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/jasmine-node/bin/jasmine-node --captureExceptions ./src"
+  },
+  "dependencies": {
+    "body-parser": "~1.18.2",
+    "bootstrap": "^4.0.0-alpha.6",
+    "cookie-parser": "~1.4.3",
+    "debug": "~3.1.0",
+    "express": "~4.16.2",
+    "font-awesome": "^4.7.0",
+    "i18n": "^0.8.3",
+    "jquery": "^3.2.1",
+    "morgan": "~1.9.0",
+    "node-sass-middleware": "0.11.0",
+    "popper.js": "^1.12.9",
+    "pug": "~2.0.0-beta11",
+    "serve-favicon": "~2.4.2",
+    "tether": "^1.4.3"
+  },
+  "devDependencies": {
+    "@angular/cli": "^1.1.1",
+    "istanbul": "^0.4.5",
+    "jasmine-node": "^1.14.5",
+    "request": "^2.81.0"
+  }
+}

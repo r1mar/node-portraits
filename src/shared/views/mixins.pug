@@ -1,0 +1,13 @@
+mixin nav-item(url, label)
+  if originalUrl == url
+    li.nav-item.active
+      a.nav-link(href=url) #{label}
+  else
+    li.nav-item
+      a.nav-link(href=url) #{label}
+
+mixin a(url, label)
+  if originalUrl == url
+    a.active(href=url) #{label}
+  else
+    a(href=url) #{label}

@@ -1,0 +1,20 @@
+{
+	"home": {
+		"welcome to": "Добро пожаловать в",
+		"Home": "Главная",
+		"contact": "контакт",
+		"Responsible for the content of this website": "Ответственный за содержание этого сайта",
+		"Email": "эмаль",
+		"Tax-ID": "Tax ID",
+		"Disclaimer": "home.Disclaimer",
+		"imprint": "home.imprint"
+	},
+	"user": {
+		"respond with a resource": "Отвечать ресурсом"
+	},
+	"locales": {
+		"english": "английский",
+		"german": "немецкий",
+		"russian": "русский"
+	}
+}

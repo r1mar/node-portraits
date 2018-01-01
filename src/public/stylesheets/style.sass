@@ -1,0 +1,171 @@
+$gray-800: #02AFB5
+$gray-dark: #147179
+$brand-inverse: $gray-800
+
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss"
+
+body
+	min-width: 320px
+
+.flag
+	margin: 2px
+
+@font-face
+	font-family: 'Britannic Bold'
+	src: url('BRITANIC.TTF') format('truetype')
+
+h1, h2, h3, h4, h5, h6
+	font-family: Britannic Bold
+	color: $gray-800
+	text-transform: uppercase
+	line-height: 0.6
+	padding: 10px 0
+	margin: 20px 0 10px 0
+
+	small
+		color: $gray-dark
+		font-size: 30%
+
+a.nav-link
+	font-family: Arial
+	font-size: 21px
+	font-weight: bold
+
+.col-background
+	position: absolute
+	width: 100%
+	padding-right: 30px
+
+.carousel-label
+	.col-11 > p
+		font-family: Britannic Bold
+		font-size: 8px
+
+	color: white
+	text-wrap: normal
+	text-align: justify
+	font-size: 13px
+
+	span, p
+		padding-right: 20px
+		margin: 0 0 0 30px
+
+	u
+		color: #90D7CF
+
+.author
+	color: white
+	font-family: Rage
+	font-style: italic
+	text-shadow: 5px 5px 5px black
+	margin-left: 30px
+	font-size: 20px
+
+=button-background-variant($background-color)
+	$active-background: darken($background-color, 10%)
+	
+	background: linear-gradient(lighten($background-color, 20%), darken($background-color, 20%))
+	
+	&:hover
+		background: linear-gradient(lighten($active-background, 20%), darken($active-background, 20%))
+
+.btn-primary
+	+button-background-variant($primary)
+
+.btn-secondary
+	+button-background-variant($secondary)
+
+.btn-info
+	+button-background-variant($info)
+
+.btn-success
+	+button-background-variant($success)
+
+.btn-warning
+	+button-background-variant($warning)
+
+.btn-danger
+	+button-background-variant($danger)
+
+.left-docked
+	position: absolute
+	transform: rotate(270deg)
+	margin-left: -23px
+	margin-top: 50px
+	z-index: 1
+
+@media(min-width: 576px)
+	h1, h2, h3, h4, h5, h6 
+		small
+			font-size: 38%
+
+	.carousel-label > .col-11 > p
+		font-size: 13px
+
+	.author
+		font-size: 35px
+
+	.left-docked
+		margin-left: -45px
+
+	.col-background
+		width: 510px
+		padding: initial
+
+	.left-docked
+		margin-left: -33px
+		margin-top: 90px
+
+@media(min-width: 768px)
+	.col-background
+		width: 690px
+
+	h1, .h1
+		font-size: 61px
+
+	.left-docked
+		margin-left: -45px
+		margin-top: 132px
+
+	.carousel-label > .col-sm-8 > p
+		font-size: 16px
+		padding-right: 30px
+
+	.author
+		font-size: 65px
+
+@media(min-width: 992px)
+	.col-background
+		width: 930px
+
+	.left-docked
+		margin-left: -45px
+		margin-top: 202px
+
+	.carousel-label
+		min-height: 432.07px
+
+		.col-sm-8 > p
+			font-size: 22px
+			padding-right: 35px
+
+	.author
+		font-size: 90px
+
+@media(min-width: 1200px)
+	.col-background
+		width: 1110px
+
+	.left-docked
+		margin-left: -35px
+		margin-top: 222px
+
+	.carousel-label
+		min-height: 524px
+
+		.col-sm-8 > p
+			font-size: 25px
+			padding-right: 85px
+
+	.author
+		font-size: 100px

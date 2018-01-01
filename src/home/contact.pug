@@ -1,0 +1,15 @@
+extends ../shared/views/layout
+
+block content
+    .container
+        .row
+            .col
+                address Musterstraße 17
+                    br 
+                    | 12345 Musterstadt
+                    br
+                    abbr(title='Phone') Tel.: 
+                    | 01234 567890
+                address
+                    strong #{'Email'}: 
+                    a(href='mailto:contact@nodepage.com') contact@nodepage.com

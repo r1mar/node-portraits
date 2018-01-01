@@ -1,0 +1,28 @@
+{
+	"home": {
+		"Home": "Startseite",
+		"contact": "Kontakt",
+		"Responsible for the content of this website": "Verantwortlich für den Inhalt dieser Webseite",
+		"Email": "Email",
+		"Tax-ID": "Steuer ID",
+		"Disclaimer": "<h2>Haftung für Inhalte</h2><p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p><p>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p><h2>Haftung für Links</h2><p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.</p><p>Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p><h2>Urheberrecht</h2><p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p><p>Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p><p><i>Quelle: <a href=\"https://www.e-recht24.de\">https://www.e-recht24.de</a></i></p>",
+		"imprint": "Impressum",
+		"description": "Handgezeichnetes Porträt vom Foto. Schenken Sie Erinnerung. Portraits schon ab 60,- €",
+		"keywords": "geschenke, geschenkideen, geschenk, geschenkidee, persoenliche geschenke, geburtstagsgeschenke, schenken, geschenke fuer maenner",
+		"order": "Bestellen &#187;",
+		"carousel-label": "Sie sind auf der Suche nach einem sehr <u>ausgefallenen Geschenk</u>? Für Ihre Liebsten, Ihre Freunde und Bekannte? Wie wäre mit einer Original-Porträtzeichnung? Liebevoll <u>handgezeichnete Porträts</u> nach Ihrer Fotovorlage. Detaillierte und sorgfältige Arbeitsweise. Die <u>exklusivste Geschenkidee</u> für Hochzeiten, Weinachten, Kommunion oder Konfirmation und viele andere Anlässe.",
+		"Portraitstudio": "Porträtstudio",
+		"The gift idea with remembrance": "Die Geschenkidee mit Erinnerungswert",
+		"order-simple": "Bestellen",
+		"Protraitstudio": "home.Protraitstudio"
+	},
+	"user": {
+		"respond with a resource": "Mit einer Ressource antworten"
+	},
+	"locales": {
+		"english": "Englisch",
+		"german": "Deutsch",
+		"russian": "Russisch"
+	},
+	"user[\"respond with a resource\"]": "user[\"respond with a resource\"]"
+}

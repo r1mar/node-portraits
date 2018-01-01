@@ -1,0 +1,64 @@
+include mixins.pug
+
+doctype html
+html(lang=lang)
+	head
+		meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+		meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+		meta(name='author', content='Tamara Martens')
+		meta(name='creator', content='Richard Martens')
+		meta(http-equiv='language', content=lang)
+		
+		link(rel='shortcut icon', media='all', href='/images/icon.ico')
+
+		script(src='/javascripts/google.analytics.js')
+
+		block head
+
+		title= title
+    
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		
+	body
+		.container
+			.row
+				.col.text-right
+					h1
+						u #{__('home.Portraitstudio')}
+						br
+						small #{__('home.The gift idea with remembrance')}
+			.row
+				.col
+					.navbar.navbar-expand-md.bg-faded.navbar-dark.bg-dark
+						button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+							span.navbar-toggler-icon
+
+						#navbarSupportedContent.collapse.navbar-collapse
+							ul.navbar-nav.mr-auto
+								+nav-item('/',__('home.Home'))
+								+nav-item('/customer-order-create',__('home.order-simple'))
+								+nav-item('/contact',__('home.contact'))
+
+		block content
+		
+		footer.footer
+			.container
+				ul.nav.navbar-nav
+					li
+						a(href='/gtc') AGB
+					li
+						a(href='/imprint') Impressum
+		hr.hidden-print
+		footer.hidden-print
+			.container
+				p &copy; 2017 - Tamara Martens Porträtstudio 1
+				
+		hr
+		footer.container
+			.row.justify-content-center
+				.col-xs-2
+					+a('/imprint', __('home.imprint'))
+
+		script(src='js/jquery.min.js')
+		script(src='js/tether.min.js')
+		script(src='js/bootstrap.min.js')

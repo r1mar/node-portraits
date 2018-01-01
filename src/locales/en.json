@@ -1,0 +1,21 @@
+{
+	"home": {
+		"welcome to": "Welcome to",
+		"Home": "Home",
+		"contact": "contact",
+		"Responsible for the content of this website": "Responsible for the content of this website",
+		"Email": "E-mail",
+		"Tax-ID": "Tax ID",
+		"Disclaimer": "home.Disclaimer",
+		"imprint": "Imprint"
+	},
+	"user": {
+		"respond with a resource": "respond with a resource"
+	},
+	"locales": {
+		"english": "English",
+		"german": "German",
+		"russian": "Russian"
+	},
+	"user[\"respond with a resource\"]": "user[\"respond with a resource\"]"
+}

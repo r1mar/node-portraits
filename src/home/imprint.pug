@@ -1,0 +1,18 @@
+extends ../shared/views/layout
+
+block content
+    .container
+        .row
+            .col
+                h2 #{__('home.Responsible for the content of this website')}
+                address Max Mustermann
+                    br
+                    | Musterstraße 17
+                    br 
+                    | 12345 Musterstadt
+                    br
+                | #{__('home.Tax-ID')}: 12 345 678 910
+                address
+                    strong #{__('home.Email')}: 
+                    a(href='mailto:contact@nodepage.com') contact@nodepage.com
+                | !{__('home.Disclaimer')}
