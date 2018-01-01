@@ -14,7 +14,7 @@ An example for nodepage
 ## install
 
 ```
-git clone https://github.com/richard-martens/nodepage.git
+git clone https://github.com/richard-martens/node-portraits.git
 
 npm install 
 ```
@@ -22,15 +22,15 @@ npm install
 ## start
 
 ```
-set DEBUG=nodepage:* & npm start
+set DEBUG=node-portraits:* & npm start
 ```
 Then start your browser with the address `localhost:3000`
 
-[appveyor-image]: https://img.shields.io/appveyor/ci/richard-martens/nodepage/master.svg?label=windows
-[appveyor-url]: https://ci.appveyor.com/project/richard-martens/nodepage
-[travis-image]: https://img.shields.io/travis/richard-martens/nodepage/master.svg?label=linux
-[travis-url]: https://travis-ci.org/richard-martens/nodepage
-[coveralls-image]: https://img.shields.io/coveralls/richard-martens/nodepage/master.svg
-[coveralls-url]: https://coveralls.io/r/richard-martens/nodepage?branch=master
-[gemnasium-image]: https://gemnasium.com/richard-martens/nodepage.svg
-[gemnasium-url]: https://gemnasium.com/richard-martens/nodepage
+[appveyor-image]: https://img.shields.io/appveyor/ci/richard-martens/node-portraits/master.svg?label=windows
+[appveyor-url]: https://ci.appveyor.com/project/richard-martens/node-portraits
+[travis-image]: https://img.shields.io/travis/richard-martens/node-portraits/master.svg?label=linux
+[travis-url]: https://travis-ci.org/richard-martens/node-portraits
+[coveralls-image]: https://img.shields.io/coveralls/richard-martens/node-portraits/master.svg
+[coveralls-url]: https://coveralls.io/r/richard-martens/node-portraits?branch=master
+[gemnasium-image]: https://gemnasium.com/richard-martens/node-portraits.svg
+[gemnasium-url]: https://gemnasium.com/richard-martens/node-portraits
