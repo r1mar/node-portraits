@@ -4,10 +4,9 @@ node_js:
   - "5.12"
   - "6.10"
   - "7.9"
-  - "8.9"
 matrix:
   include:
-    - node_js: "9.0"
+    - node_js: "8.0"
       env: "NODEJS_ORG_MIRROR=https://nodejs.org/download/nightly"
   allow_failures:
     # Allow the nightly installs to fail
