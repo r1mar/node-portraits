@@ -16,13 +16,14 @@ html(lang=lang)
 		block head
 
 		title= title
-    
+
 		link(rel='stylesheet', href='/stylesheets/style.css')
+		link(rel='stylesheet', href='/css/font-awesome.min.css')
 		
 	body
 		.container
 			.row
-				.col.text-right
+				.col.text-right.d-none.d-sm-block
 					h1
 						u #{__('home.Portraitstudio')}
 						br
@@ -30,6 +31,7 @@ html(lang=lang)
 			.row
 				.col
 					.navbar.navbar-expand-md.bg-faded.navbar-dark.bg-dark
+						a.navbar-brand(href='/') #{__('home.Portraitstudio')}
 						button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
 							span.navbar-toggler-icon
 

@@ -34,6 +34,7 @@ app.use('/js', express.static(path.join(__dirname, '../node_modules/jquery/dist'
 app.use('/app', express.static(path.join(__dirname, '../dist')));
 app.use(express.static(path.join(__dirname, '../node_modules/tether/dist')));
 app.use(express.static(path.join(__dirname, '../node_modules/bootstrap/dist')));
+app.use(express.static(path.join(__dirname, '../node_modules/font-awesome')));
 
 //setup translations
 i18n.configure({

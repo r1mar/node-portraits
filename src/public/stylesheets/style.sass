@@ -15,7 +15,7 @@ body
 	font-family: 'Britannic Bold'
 	src: url('BRITANIC.TTF') format('truetype')
 
-h1, h2, h3, h4, h5, h6
+h1, h2, h3, h4, h5, h6, .navbar-brand
 	font-family: Britannic Bold
 	color: $gray-800
 	text-transform: uppercase
@@ -25,23 +25,36 @@ h1, h2, h3, h4, h5, h6
 
 	small
 		color: $gray-dark
-		font-size: 30%
+		font-size: 37%
+
+h1
+	font-size: 2.75rem
+
+.navbar-brand
+	font-size: 2rem
+	padding: 0
+	line-height: 0.2
+
+.col-12 a.btn-lg
+	margin: 10px auto
+	display: block
+	width: 150px
 
 a.nav-link
 	font-family: Arial
 	font-size: 21px
 	font-weight: bold
 
-.col-background
-	position: absolute
-	width: 100%
-	padding-right: 30px
+.main-container
 
 .carousel-label
-	.col-11 > p
+	p
 		font-family: Britannic Bold
-		font-size: 8px
+		font-size: 22px
+		background-color: darkgray
 
+	background-clip: content-box
+	background-color: darkgray
 	color: white
 	text-wrap: normal
 	text-align: justify
@@ -52,7 +65,7 @@ a.nav-link
 		margin: 0 0 0 30px
 
 	u
-		color: #90D7CF
+		color: #B0F7EF
 
 .author
 	color: white
@@ -60,7 +73,13 @@ a.nav-link
 	font-style: italic
 	text-shadow: 5px 5px 5px black
 	margin-left: 30px
-	font-size: 20px
+	font-size: 47px
+
+rm-materials-carousel
+	height: 200px
+
+.col, .col-12
+	padding: 0
 
 =button-background-variant($background-color)
 	$active-background: darken($background-color, 10%)
@@ -109,7 +128,7 @@ a.nav-link
 	.left-docked
 		margin-left: -45px
 
-	.col-background
+	.carousel-image
 		width: 510px
 		padding: initial
 
@@ -118,7 +137,7 @@ a.nav-link
 		margin-top: 90px
 
 @media(min-width: 768px)
-	.col-background
+	.carousel-image
 		width: 690px
 
 	h1, .h1
@@ -136,7 +155,7 @@ a.nav-link
 		font-size: 65px
 
 @media(min-width: 992px)
-	.col-background
+	.carousel-image
 		width: 930px
 
 	.left-docked
@@ -154,7 +173,7 @@ a.nav-link
 		font-size: 90px
 
 @media(min-width: 1200px)
-	.col-background
+	.carousel-image
 		width: 1110px
 
 	.left-docked
