@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-7">
+      <div class="btn-group" role="group" aria-label="Style selection">
+        <button type="button" class="btn btn-secondary" (click)="selectPencil()" [class.active]="image === pencil">Bleistift</button>
+        <button type="button" class="btn btn-secondary" (click)="selectColoredPencil()" [class.active]="image === coloredPencil">Buntstift</button>
+        <button type="button" class="btn btn-secondary" (click)="selectPastel()" [class.active]="image === pastel">Pastell</button>
+      </div>
+      <img [src]="image.src" [alt]="image.alt"/>
+    </div>
+    <div class="col-sm-5">
+      <h1>{{image.header}}</h1>
+      <p>{{image.body}}</p>
+      <a class="btn btn-danger btn-lg" href="/customer-order-create" role="button">Bestellen &#187;</a>
+    </div>
+  </div>
+</div>
