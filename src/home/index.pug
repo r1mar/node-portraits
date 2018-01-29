@@ -9,16 +9,13 @@ block content
 		img.carousel-image.d-none.d-md-block(src='/images/carousel.jpg')
 		a.btn.btn-danger.btn-lg.left-docked.d-none.d-sm-inline-block(role='button', href='/customer-order-create') !{__('home.order')}
 		.row
-			.col-12.col-sm-8.carousel-label
+			.col-12.col-sm-8.carousel-label.fluid-col
 				span.author Tamara Martens
 				p !{__('home.carousel-label')}
 		.row.d-sm-none
 			.col-12
 				a.btn.btn-danger.btn-lg(role='button', href='/customer-order-create') !{__('home.order')}
-	.container
-		.row
-			.col-12
-				app-root
+	app-root
 	.container
 		.row
 			.col
