@@ -6,15 +6,15 @@ block head
 
 block content
 	.container
-		.row
+		.row.carousel-image
+			.d-none.d-md-block.col-md-4
+				a.btn.btn-danger.btn-lg.left-docked.d-none.d-md-inline-block(role='button', href='/customer-order-create') !{__('home.order')}
 			.col-12.col-md-8.carousel-label.fluid-col
 				span.author Tamara Martens
 				p !{__('home.carousel-label')}
 		.row.d-md-none
 			.col-12
 				a.btn.btn-danger.btn-lg(role='button', href='/customer-order-create') !{__('home.order')}
-		img.carousel-image.d-none.d-md-block(src='/images/carousel.jpg')
-		a.btn.btn-danger.btn-lg.left-docked.d-none.d-md-inline-block(role='button', href='/customer-order-create') !{__('home.order')}
 	app-root
 	.container
 		.row

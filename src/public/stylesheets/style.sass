@@ -4,16 +4,18 @@ $brand-inverse: $gray-800
 
 @import "../../../node_modules/bootstrap/scss/bootstrap.scss"
 
+@font-face
+	font-family: 'Britannic Bold'
+	src: url('BRITANIC.TTF') format('truetype')
+
 body
 	min-width: 320px
+	color: $gray-dark
+	font-family: Britannic Bold
 
 .flag
 	margin: 2px
 	cursor: pointer
-
-@font-face
-	font-family: 'Britannic Bold'
-	src: url('BRITANIC.TTF') format('truetype')
 
 h1, h2, h3, h4, h5, h6, .navbar-brand
 	font-family: Britannic Bold
@@ -45,12 +47,11 @@ a.nav-link
 	font-size: 21px
 	font-weight: bold
 
-.main-container
-
 .carousel-label
 	p
 		font-family: Britannic Bold
 		font-size: 22px
+		padding: 15px
 
 	background-clip: content-box
 	background-color: darkgray
@@ -58,10 +59,6 @@ a.nav-link
 	text-wrap: normal
 	text-align: justify
 	font-size: 13px
-
-	span, p
-		padding-right: 20px
-		margin: 0 0 0 30px
 
 	u
 		color: #B0F7EF
@@ -71,11 +68,28 @@ a.nav-link
 	font-family: Rage
 	font-style: italic
 	text-shadow: 5px 5px 5px black
-	margin-left: 30px
-	font-size: 47px
+	display: block
+	text-align: center
+	font-size: 4em
 
 .fluid-col
 	padding: 0
+
+rm-materials-picture-movie
+	background-color: darkgray
+
+	a > i.fa
+		top: 25%
+
+footer > .container > ul.navbar-nav
+	display: block
+	padding: 2em
+
+	li
+		float: left
+
+		a
+			padding: 15px;
 
 =button-background-variant($background-color)
 	$active-background: darken($background-color, 10%)
@@ -106,8 +120,8 @@ a.nav-link
 .left-docked
 	position: absolute
 	transform: rotate(270deg)
-	margin-left: -23px
-	margin-top: 50px
+	margin-left: -45px
+	margin-top: 180px
 	z-index: 1
 
 @media(min-width: 500px)
@@ -119,50 +133,30 @@ a.nav-link
 		small
 			font-size: 38%
 
-	.carousel-label > .col-11 > p
-		font-size: 13px
+	.carousel-label > p
+		font-size: 1.6em
 
 	.author
-		font-size: 35px
-
-	.left-docked
-		margin-left: -45px
-
-	.carousel-image
-		width: 510px
-		padding: initial
-
-	.left-docked
-		margin-left: -33px
-		margin-top: 90px
+		font-size: 5em
 
 @media(min-width: 768px)
-	.carousel-image
-		width: 720px
-		margin-left: -15px
-
 	h1, .h1
 		font-size: 61px
 
-	.left-docked
-		margin-left: -45px
-		margin-top: 132px
+	.carousel-image
+		background-image: url('/images/carousel.jpg')
+		background-size: cover
 
 	.carousel-label
-		position: absolute
 		background-color: inherit
 
-	.carousel-label > .col-sm-8 > p
-		font-size: 16px
-		padding-right: 30px
+		p
+			font-size: 1.5em
 
 	.author
 		font-size: 65px
 
 @media(min-width: 992px)
-	.carousel-image
-		width: 930px
-
 	.left-docked
 		margin-left: -45px
 		margin-top: 202px
@@ -170,17 +164,13 @@ a.nav-link
 	.carousel-label
 		min-height: 432.07px
 
-		.col-sm-8 > p
-			font-size: 22px
-			padding-right: 35px
+		p
+			font-size: 1.8em
 
 	.author
 		font-size: 90px
 
 @media(min-width: 1200px)
-	.carousel-image
-		width: 1110px
-
 	.left-docked
 		margin-left: -35px
 		margin-top: 222px
@@ -188,8 +178,8 @@ a.nav-link
 	.carousel-label
 		min-height: 524px
 
-		.col-sm-8 > p
-			font-size: 25px
+		p
+			font-size: 2.1em
 			padding-right: 85px
 
 	.author

@@ -49,17 +49,11 @@ html(lang=lang)
 					li
 						a(href='/gtc') AGB
 					li
-						a(href='/imprint') Impressum
+						+a('/imprint', __('home.imprint'))
 		hr.hidden-print
 		footer.hidden-print
 			.container
 				p &copy; 2017 - Tamara Martens Porträtstudio 1
-				
-		hr
-		footer.container
-			.row.justify-content-center
-				.col-xs-2
-					+a('/imprint', __('home.imprint'))
 
 		script(src='js/jquery.min.js')
 		script(src='js/tether.min.js')
