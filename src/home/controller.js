@@ -15,3 +15,7 @@ exports.contact = function(req, res, next) {
 exports.imprint = function(req, res, next) {
   res.render('home/imprint', imprintModel);
 };
+
+exports.gtc = function(req, res, next) {
+  res.render('home/gtc');
+};

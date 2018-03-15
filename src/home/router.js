@@ -8,5 +8,6 @@ var controller = require('./controller');
 router.get('/', controller.index);
 router.get('/contact', controller.contact);
 router.get('/imprint', controller.imprint);
+router.get('/gtc', controller.gtc);
 
 module.exports = router;
