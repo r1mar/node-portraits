@@ -3,6 +3,7 @@ include mixins.pug
 doctype html
 html(lang=lang)
 	head
+		base(href="/")
 		meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
 		meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
 		meta(name='author', content='Tamara Martens')
@@ -19,7 +20,8 @@ html(lang=lang)
 
 		link(rel='stylesheet', href='/stylesheets/style.css')
 		link(rel='stylesheet', href='/css/font-awesome.min.css')
-		
+		link(rel='stylesheet', href='/stylesheets/material-icons.css')
+
 	body
 		.container
 			.row
@@ -38,7 +40,7 @@ html(lang=lang)
 						#navbarSupportedContent.collapse.navbar-collapse
 							ul.navbar-nav.mr-auto
 								+nav-item('/',__('home.Home'))
-								+nav-item('/customer-order-create',__('home.order-simple'))
+								+nav-item('/order','Bestellen')
 								+nav-item('/contact',__('home.contact'))
 
 		block content

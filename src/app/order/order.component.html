@@ -1,0 +1,28 @@
+<mat-horizontal-stepper>
+    <mat-step label="Bilder hochladen">
+      <mat-image-loader [apiEndPoint]="'/order/image/create'"></mat-image-loader>
+
+      <button mat-button matStepperNext>Weiter</button>
+    </mat-step>
+
+    <mat-step label="Portrait-Typ beschreiben">
+      <p>Content</p>
+
+      <button mat-button matStepperPrevious>Zurück</button>
+      <button mat-button matStepperNext>Weiter</button>
+    </mat-step>
+
+    <mat-step label="Adressen">
+      <p>Content</p>
+
+      <button mat-button matStepperPrevious>Zurück</button>
+      <button mat-button matStepperNext>Weiter</button>
+    </mat-step>
+
+    <mat-step label="Abschluß">
+      <p>Content</p>
+
+      <button mat-button matStepperPrevious>Zurück</button>
+      <button mat-button matStepperNext>Weiter</button>
+    </mat-step>
+</mat-horizontal-stepper>

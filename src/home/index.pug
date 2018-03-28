@@ -8,13 +8,13 @@ block content
 	.container
 		.row.carousel-image
 			.d-none.d-md-block.col-md-4
-				a.btn.btn-danger.btn-lg.left-docked.d-none.d-md-inline-block(role='button', href='/customer-order-create') !{__('home.order')}
+				a.btn.btn-danger.btn-lg.left-docked.d-none.d-md-inline-block(role='button', href='/order') !{__('home.order')}
 			.col-12.col-md-8.carousel-label.fluid-col
 				span.author Tamara Martens
 				p !{__('home.carousel-label')}
 		.row.d-md-none
 			.col-12
-				a.btn.btn-danger.btn-lg(role='button', href='/customer-order-create') !{__('home.order')}
+				a.btn.btn-danger.btn-lg(role='button', href='/order') !{__('home.order')}
 	app-root
 	.container
 		.row
@@ -40,7 +40,7 @@ block content
 				| €
 			div
 				strong bestellen unter:
-				span(itemprop='offerURL') http://www.tm-portraits.de/customer-order-create
+				span(itemprop='offerURL') http://www.tm-portraits.de/order
 
 block scripts
 	script(type="text/javascript", src="app/inline.bundle.js")

@@ -32,6 +32,7 @@ app.use(sassMiddleware({
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/js', express.static(path.join(__dirname, '../node_modules/jquery/dist')));
 app.use('/app', express.static(path.join(__dirname, '../dist')));
+app.use('/stylesheets', express.static(path.join(__dirname, '../node_modules/material-design-icons/iconfont')));
 app.use(express.static(path.join(__dirname, '../node_modules/tether/dist')));
 app.use(express.static(path.join(__dirname, '../node_modules/bootstrap/dist')));
 app.use(express.static(path.join(__dirname, '../node_modules/font-awesome')));
@@ -58,10 +59,12 @@ app.use(function(req, res, next){
 var home = require('./home/router');
 var users = require('./user/router');
 var locales = require('./locales/router');
+var order = require('./order/router');
 
 app.use('/locales', locales);
 app.use('/', home);
 app.use('/user', users);
+app.use('/order', order);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
