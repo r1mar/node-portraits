@@ -38,6 +38,7 @@
     "multer": "^1.3.0",
     "node-sass": "^4.8.3",
     "node-sass-middleware": "0.11.0",
+    "pg": "^7.4.1",
     "popper.js": "^1.14.1",
     "pug": "~2.0.3",
     "rm-materials": "file:///C:\\Users\\rm\\Projekte\\rm-materials\\dist",
