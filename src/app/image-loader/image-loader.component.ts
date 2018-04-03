@@ -1,8 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
 
 import { FileMetadata } from './file-metadata';
+import { MatImageLoaderService } from './image-loader.service'; 
 
 @Component({
   selector: 'mat-image-loader',
@@ -14,7 +13,7 @@ export class MatImageLoaderComponent implements OnInit {
   @Input() public apiEndPoint: string
   uploadingFiles: FileMetadata[] = [];
 
-  constructor(private http: HttpClient) {
+  constructor(private imageLoaderService: MatImageLoaderService) {
 
   }
 
@@ -26,43 +25,17 @@ export class MatImageLoaderComponent implements OnInit {
 
     if (fileList.length > 0) {
       let file: File = fileList[fileList.length - 1];
-      this.pushNewFile(file);
-      this.uploadNextFile(file)
+      //this.pushNewFile(file);
+      this.imageLoaderService.uploadFile(file, this.apiEndPoint)
         .subscribe(
         data => {
-          this.uploadingFiles.find(function (value: FileMetadata) {
+          /*this.uploadingFiles.find(function (value: FileMetadata) {
             return value.description === file.name;
-          }).id = data["id"];
+          }).id = data["id"];*/
         },
         error => console.log(error)
         );
     }
-  }
-
-  private uploadNextFile(file: File): Observable<object> {
-    let formData: FormData = new FormData();
-
-    formData.append('uploadFile', file, file.name);
-
-    let headers = new HttpHeaders();
-    // No need to include Content-Type in Angular 4 
-    headers.append('Content-Type', 'multipart/form-data');
-    headers.append('Accept', 'application/json');
-
-    return this.http.post(`${this.apiEndPoint}`, formData, { headers: headers });
-  }
-
-  private extractData(res: Response) {
-    if (res.status < 200 || res.status >= 300) {
-      throw new Error('Bad response status: ' + res.status);
-    }
-    return res.json();
-  }
-
-  private handleError(error: any) {
-    let errMsg = error.message || 'Server error';
-    console.error(errMsg); // log to console instead
-    return Observable.throw(errMsg);
   }
 
   private pushNewFile(file: File) {
