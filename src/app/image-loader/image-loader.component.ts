@@ -25,13 +25,13 @@ export class MatImageLoaderComponent implements OnInit {
 
     if (fileList.length > 0) {
       let file: File = fileList[fileList.length - 1];
-      //this.pushNewFile(file);
+      this.pushNewFile(file);
       this.imageLoaderService.uploadFile(file, this.apiEndPoint)
         .subscribe(
         data => {
-          /*this.uploadingFiles.find(function (value: FileMetadata) {
+          this.uploadingFiles.find(function (value: FileMetadata) {
             return value.description === file.name;
-          }).id = data["id"];*/
+          }).id = data["id"];
         },
         error => console.log(error)
         );
