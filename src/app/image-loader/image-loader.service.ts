@@ -8,25 +8,18 @@ export class MatImageLoaderService {
 
   constructor(private http: HttpClient) { }
 
-  public uploadFile(file: File, apiEndPoint: string): Observable<object> {
+  public uploadFile(file: File, apiEndPoint: string): Promise<any> {
     let formData: FormData = new FormData();
     let httpService = this.http;
 
     formData.append('uploadFile', file, file.name);
 
-    return new Observable<object>((subscriber: Subscriber<object>) => {
-      fetch(`${apiEndPoint}`, {
+    return fetch(`${apiEndPoint}`, {
         method: 'POST',
         body: formData
       }).then((response:Response) => {
-        if(response.status !== 200) {
-          subscriber.error(new Error(response.statusText));
-        } else {
-          subscriber.next(response.json());
-        }
-        subscriber.complete();
+        return response.json();
       });
-    });
 
 
     /*let headers = new HttpHeaders();
