@@ -1,12 +1,14 @@
 'use strict';
 
-const errorhandler = function(error) {
-        console.log('ERROR:', error); // print error;
-        res.status(500).send(error.message);
+const errorhandler = function(res) {
+        return function(error) {
+          console.log('ERROR:', error); // print error;
+          res.status(500).send(error.message);
+        };
       }
 
 exports.index = function (req, res, next) {
-  res.render('order/index');
+  res.render('image/index');
 };
 
 exports.imageCreate = function (req, res, next) {
@@ -19,16 +21,19 @@ exports.imageCreate = function (req, res, next) {
         id: data.id
       });
     })
-    .catch(errorhandler);
+    .catch(errorhandler(res));
 
 }
 
 exports.imageDelete = function(req, res, next) {
   const db = require('../db').instance;
 
-  db.none("DELETE FROM images WHERE id = $1", [ req.id ])
-    .then(data => res.status(201).send( data.rowCount + ' images deleted'))
-    .catch(errorhandler);
+  db.result("DELETE FROM images WHERE id = $1", [ req.id ])
+    .then(data => { 
+      res.status(201);
+      res.json(data);
+    })
+    .catch(errorhandler(res));
 }
 
 exports.imageRead = function(req, res, next) {
@@ -36,10 +41,10 @@ exports.imageRead = function(req, res, next) {
 
   db.one("SELECT * FROM images WHERE id = $1", [req.params.id])
     .then(data => {
-      res.status(200)
-        .setHeader('Content-Length', data.file.length)
-        .setHeader('Content-Type', data.mimetype)
-        .write(data.file, 'binary')
-        .end();
-    }).catch(errorhandler)
+      res.status(200);
+      res.setHeader('Content-Length', data.file.length)
+      res.setHeader('Content-Type', data.mimetype)
+      res.write(data.file, 'binary')
+      res.end();
+    }).catch(errorhandler(res))
 }

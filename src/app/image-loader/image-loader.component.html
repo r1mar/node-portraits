@@ -5,7 +5,8 @@
 <mat-list>
   <mat-list-item *ngFor="let uploadingFile of uploadingFiles">
     {{uploadingFile.description}}
-    <button mat-icon-button title="Löschen" [attr.disabled]="uploadingFile.id ? null : ' '">
+    <button mat-icon-button title="Löschen" [attr.disabled]="uploadingFile.id ? null : ' '"
+        (click)="deleteFile(uploadingFile.id)">
       <mat-icon aria-label="remove image">cancel</mat-icon>
     </button>
     <img mat-list-avatar src="{{uploadingFile.dataUrl}}" alt="{{uploadingFile.description}}" [class.disabled]="true">

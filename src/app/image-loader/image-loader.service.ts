@@ -8,18 +8,22 @@ export class MatImageLoaderService {
 
   constructor(private http: HttpClient) { }
 
-  public uploadFile(file: File, apiEndPoint: string): Observable<object> {
-    let formData: FormData = new FormData();
-    let httpService = this.http;
+  public createFile(file: File, apiEndPoint: string): Observable<any> {
+    const formData: FormData = new FormData();
+    const headers = new HttpHeaders();
 
     formData.append('uploadFile', file, file.name);
 
-    let headers = new HttpHeaders();
     // No need to include Content-Type in Angular 4 
     headers.append('Content-Type', 'multipart/form-data');
     headers.append('Accept', 'application/json');
 
-    return httpService.post(`${apiEndPoint}`, formData, { headers: headers });
+    return this.http.post(`${apiEndPoint}`, formData, { headers: headers });
 
   }
+
+  public deleteFile(id: number, apiEndPoint: string) :Observable<any> {
+    return this.http.delete(`${apiEndPoint}/${id}`);
+  }
+
 }

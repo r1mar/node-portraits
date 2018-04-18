@@ -61,11 +61,13 @@ var home = require('./home/router');
 var users = require('./user/router');
 var locales = require('./locales/router');
 var order = require('./order/router');
+var image = require('./image/router');
 
 app.use('/locales', locales);
 app.use('/', home);
 app.use('/user', users);
 app.use('/order', order);
+app.use('/image', image);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

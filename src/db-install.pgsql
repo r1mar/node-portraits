@@ -13,7 +13,7 @@ CREATE TYPE stamp  AS (
     at_timestamp  TIMESTAMP
 );
 
-CREATE TABLE image (
+CREATE TABLE images (
   ID SERIAL PRIMARY KEY,
   name VARCHAR(1024),
   mimetype VARCHAR(64),
@@ -30,4 +30,4 @@ BEGIN
 END;
 $creating_stamp$ language 'plpgsql';
 
-CREATE TRIGGER creating_stamp BEFORE INSERT ON image FOR EACH ROW EXECUTE PROCEDURE  init_created_column();
+CREATE TRIGGER creating_stamp BEFORE INSERT ON images FOR EACH ROW EXECUTE PROCEDURE  init_created_column();

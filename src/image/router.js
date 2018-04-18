@@ -11,8 +11,8 @@ var upload = multer({ storage: storage });
 /* GET home page. */
 router.get('/', controller.index);
 
-router.get('/image/:id', upload.single('uploadFile'), controller.imageRead);
-router.post('/image', upload.single('uploadFile'), controller.imageCreate);
-router.delete('/image/:id', upload.single('uploadFile'), controller.imageDelete);
+router.get('/:id', upload.single('uploadFile'), controller.imageRead);
+router.post('/', upload.single('uploadFile'), controller.imageCreate);
+router.delete('/:id', upload.single('uploadFile'), controller.imageDelete);
 
 module.exports = router;
