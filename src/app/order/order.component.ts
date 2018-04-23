@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatImageLoaderComponent } from './../image-loader/image-loader.component';
 
 @Component({
   selector: 'app-order',
@@ -7,13 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderComponent implements OnInit {
 
+  @ViewChild(MatImageLoaderComponent)
+  imageLoader: MatImageLoaderComponent;
+
   constructor() { }
 
   ngOnInit() {
-  }
-
-  onChange(files) {
-    console.log(files);
+    if(this.imageLoader.isUploadCompleted) {
+      
+    }
   }
 
 }

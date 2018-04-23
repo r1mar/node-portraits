@@ -1,7 +1,7 @@
 <mat-horizontal-stepper>
     <mat-step label="Bilder hochladen">
       <p>Laden Sie Ihre Fotos hoch. Je höher die Qualität der Fotos, um so besser kann das Ergebnis aussehen. Wir wissen nicht wie Ihre Liebsten aussehen und können keine Details abbilden, die wir auf Ihren Bildern nicht erkennen können.</p>
-      <mat-image-loader [apiEndPoint]="'/image'"></mat-image-loader>
+      <mat-image-loader [apiEndPoint]="'/image'" (uploadStarted)="uploadStarted($event)"></mat-image-loader>
       <p>Wenn Sie mindestens ein Bild ausgewählt haben, können Sie auf "Weiter" klicken. Sie müssen nicht warten bis die Fotos hochgeladen sind. Diese werden weiter geladen, solange Sie in den weiteren Schritten Ihre Daten angeben. Sollten Sie den Vorgang abbrechen, werden die Fotos selbstverständlich gelöscht.</p>
 
       <button mat-button matStepperNext>Weiter</button>
