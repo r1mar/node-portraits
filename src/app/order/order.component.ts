@@ -14,7 +14,7 @@ export class OrderComponent implements OnInit {
   imageLoader: MatImageLoaderComponent;
 
   portraitKinds: Array<PortraitKind>;
-  selectedKind: PortraitKind;
+  selectedId: number;
 
   constructor(private orderService: OrderService) { 
     
@@ -23,9 +23,16 @@ export class OrderComponent implements OnInit {
   ngOnInit() {
     this.orderService.queryPortraitKinds().subscribe(data => {
       this.portraitKinds = data;
+      this.selectedId = this.portraitKinds[0].id;
     }, error => {
       console.log(error);
     });
+  }
+
+  private getPrice(portraitKindId:number): number {
+    var portraitKind = this.portraitKinds.find(f=>{ return f.id === portraitKindId });
+
+    return portraitKind.price;
   }
 
 }

@@ -9,7 +9,9 @@
 
     <mat-step label="Portrait-Typ beschreiben">
       <p>Welches Porträt möchten Sie? Sagen Sie es uns und wir sagen Ihnen direkt was es kosten würde.</p>
-      <mat-radio-group [(ngModel)]="selectedKind">
+      <label for="price">Preis:</label>
+      <span *ngIf="selectedId" id="price">{{getPrice(selectedId)}}</span>
+      <mat-radio-group [(ngModel)]="selectedId" required="true">
         <mat-radio-button *ngFor="let portraitKind of portraitKinds" [value]="portraitKind.id">
           {{portraitKind.name}}
         </mat-radio-button>
