@@ -1,5 +1,5 @@
 DROP DATABASE IF EXISTS "tm-portraits";
-CREATE DATABASE "tm-portraits";
+CREATE DATABASE "tm-portraits" WITH TEMPLATE=template0 ENCODING='UTF8';
 
 \c tm-portraits;
 
@@ -31,3 +31,13 @@ END;
 $creating_stamp$ language 'plpgsql';
 
 CREATE TRIGGER creating_stamp BEFORE INSERT ON images FOR EACH ROW EXECUTE PROCEDURE  init_created_column();
+
+CREATE TABLE "portrait-kinds" (
+  ID SERIAL PRIMARY KEY,
+  NAME VARCHAR(40),
+  PRICE NUMERIC(6,2)
+);
+
+INSERT INTO "portrait-kinds" (name, price) VALUES ('Bleistiftporträt', 60.0);
+INSERT INTO "portrait-kinds" (name, price) VALUES ('Buntstiftporträt', 80.0);
+INSERT INTO "portrait-kinds" (name, price) VALUES ('Pastelporträt', 100.0);
