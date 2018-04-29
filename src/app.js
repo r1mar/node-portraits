@@ -63,6 +63,7 @@ var locales = require('./locales/router');
 var order = require('./order/router');
 var image = require('./image/router');
 var portraitKind = require('./portrait-kind/router');
+var portraitSize = require('./portrait-size/router');
 
 app.use('/locales', locales);
 app.use('/', home);
@@ -70,6 +71,7 @@ app.use('/user', users);
 app.use('/order', order);
 app.use('/image', image);
 app.use('/portrait-kind', portraitKind);
+app.use('/portrait-size', portraitSize);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

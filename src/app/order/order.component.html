@@ -1,37 +1,63 @@
 <mat-horizontal-stepper>
-    <mat-step label="Bilder hochladen">
-      <p>Laden Sie Ihre Fotos hoch. Je höher die Qualität der Fotos, um so besser kann das Ergebnis aussehen. Wir wissen nicht wie Ihre Liebsten aussehen und können keine Details abbilden, die wir auf Ihren Bildern nicht erkennen können.</p>
-      <mat-image-loader [apiEndPoint]="'/image'"></mat-image-loader>
-      <p>Wenn Sie mindestens ein Bild ausgewählt haben, können Sie auf "Weiter" klicken. Sie müssen nicht warten bis die Fotos hochgeladen sind. Diese werden weiter geladen, solange Sie in den weiteren Schritten Ihre Daten angeben. Sollten Sie den Vorgang abbrechen, werden die Fotos selbstverständlich gelöscht.</p>
+  <mat-step label="Bilder hochladen">
+    <p>Laden Sie Ihre Fotos hoch. Je höher die Qualität der Fotos, um so besser kann das Ergebnis aussehen. Wir wissen nicht
+      wie Ihre Liebsten aussehen und können keine Details abbilden, die wir auf Ihren Bildern nicht erkennen können.</p>
+    <mat-image-loader [apiEndPoint]="'/image'"></mat-image-loader>
+    <p>Wenn Sie mindestens ein Bild ausgewählt haben, können Sie auf "Weiter" klicken. Sie müssen nicht warten bis die Fotos
+      hochgeladen sind. Diese werden weiter geladen, solange Sie in den weiteren Schritten Ihre Daten angeben. Sollten Sie
+      den Vorgang abbrechen, werden die Fotos selbstverständlich gelöscht.</p>
 
-      <button mat-button matStepperNext>Weiter</button>
-    </mat-step>
+    <button mat-button matStepperNext>Weiter</button>
+  </mat-step>
 
-    <mat-step label="Portrait-Typ beschreiben">
-      <p>Welches Porträt möchten Sie? Sagen Sie es uns und wir sagen Ihnen direkt was es kosten würde.</p>
-      <label for="price">Preis:</label>
-      <span *ngIf="selectedId" id="price">{{getPrice(selectedId)}}</span>
-      <mat-radio-group [(ngModel)]="selectedId" required="true">
-        <mat-radio-button *ngFor="let portraitKind of portraitKinds" [value]="portraitKind.id">
-          {{portraitKind.name}}
-        </mat-radio-button>
-      </mat-radio-group>
+  <mat-step label="Portrait-Typ beschreiben">
+    <p>Welches Porträt möchten Sie? Sagen Sie es uns und wir sagen Ihnen direkt was es kosten würde.</p>
+    <mat-grid-list cols="2" rowHeight="2:1">
+      <mat-grid-tile>
+        <label for="price">Preis:</label>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <span id="price">{{getPrice(selectedPortraitKindId, selectedPortraitSizeId)}}</span>
+      </mat-grid-tile>
 
-      <button mat-button matStepperPrevious>Zurück</button>
-      <button mat-button matStepperNext>Weiter</button>
-    </mat-step>
+      <mat-grid-tile>
+        <label for="rgKind">Porträt-Typ:</label>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-radio-group id="rgKind" [(ngModel)]="selectedPortraitKindId" required="true">
+          <mat-radio-button *ngFor="let portraitKind of portraitKinds" [value]="portraitKind.id">
+            {{portraitKind.name}}
+          </mat-radio-button>
+        </mat-radio-group>
+      </mat-grid-tile>
 
-    <mat-step label="Adressen">
-      <p>Content</p>
+      <mat-grid-tile>
+        <label for="rgSize">Größe:</label>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-radio-group id="rgSize" [(ngModel)]="selectedPortraitSizeId" required="true">
+          <mat-radio-button *ngFor="let portraitSize of portraitSizes" [value]="portraitSize.id">
+            {{portraitSize.name}}
+          </mat-radio-button>
+        </mat-radio-group>
+      </mat-grid-tile>
+    </mat-grid-list>
 
-      <button mat-button matStepperPrevious>Zurück</button>
-      <button mat-button matStepperNext>Weiter</button>
-    </mat-step>
+    <button mat-button matStepperPrevious>Zurück</button>
+    <button mat-button matStepperNext>Weiter</button>
+  </mat-step>
 
-    <mat-step label="Abschluß">
-      <p>Content</p>
+  <mat-step label="Adressen">
+    <p>Content</p>
 
-      <button mat-button matStepperPrevious>Zurück</button>
-      <button mat-button matStepperNext>Weiter</button>
-    </mat-step>
+    <button mat-button matStepperPrevious>Zurück</button>
+    <button mat-button matStepperNext>Weiter</button>
+  </mat-step>
+
+  <mat-step label="Abschluß">
+    <p>Content</p>
+
+    <button mat-button matStepperPrevious>Zurück</button>
+    <button mat-button matStepperNext>Weiter</button>
+  </mat-step>
 </mat-horizontal-stepper>

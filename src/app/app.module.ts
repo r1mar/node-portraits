@@ -14,7 +14,7 @@ import { OrderService } from './order/order.service';
 import { PortraitVomFotoComponent } from './portrait-vom-foto/portrait-vom-foto.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
-import { MatButtonModule, MatIconModule, MatListModule, MatIconRegistry, MatProgressSpinnerModule, MatRadioModule, MatStepperModule } from '@angular/material';
+import { MatButtonModule, MatGridListModule, MatIconModule, MatListModule, MatIconRegistry, MatProgressSpinnerModule, MatRadioModule, MatStepperModule } from '@angular/material';
 
 import { MatImageLoaderComponent } from './image-loader/image-loader.component';
 import { MatImageLoaderService } from './image-loader/image-loader.service';
@@ -45,6 +45,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule,
     MatButtonModule,
+    MatGridListModule,
     MatIconModule,
     MatListModule,
     MatProgressSpinnerModule,

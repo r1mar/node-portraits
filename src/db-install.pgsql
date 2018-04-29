@@ -41,3 +41,17 @@ CREATE TABLE "portrait-kinds" (
 INSERT INTO "portrait-kinds" (name, price) VALUES ('Bleistiftporträt', 60.0);
 INSERT INTO "portrait-kinds" (name, price) VALUES ('Buntstiftporträt', 80.0);
 INSERT INTO "portrait-kinds" (name, price) VALUES ('Pastelporträt', 100.0);
+
+CREATE TABLE "portrait-sizes" (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(2),
+  width NUMERIC(4,1),
+  height NUMERIC(4,1),
+  min_subjects SMALLINT,
+  max_subjects SMALLINT,
+  price NUMERIC(4,2)
+);
+
+INSERT INTO "portrait-sizes" (name, width, height, min_subjects, max_subjects) VALUES ('A4', 1.0, 1.0, 1, 2);
+INSERT INTO "portrait-sizes" (name, width, height, min_subjects, max_subjects, price) VALUES ('A3', 1.0, 1.0, 1, 3, 15.0);
+INSERT INTO "portrait-sizes" (name, width, height, min_subjects, max_subjects, price) VALUES ('A2', 1.0, 1.0, 1, 5, 30.0);
