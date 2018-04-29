@@ -3,6 +3,7 @@ import { MatImageLoaderComponent } from './../image-loader/image-loader.componen
 import { OrderService } from './order.service';
 import { PortraitKind } from './portrait-kind';
 import { PortraitSize } from './portrait-size';
+import { CountSubject } from './count-subject';
 
 @Component({
   selector: 'app-order',
@@ -15,10 +16,13 @@ export class OrderComponent implements OnInit {
   imageLoader: MatImageLoaderComponent;
 
   portraitKinds: Array<PortraitKind>;
-  selectedPortraitKindId: number;
+  selectedPortraitKindName: string;
 
   portraitSizes: Array<PortraitSize>;
-  selectedPortraitSizeId: number;
+  selectedPortraitSizeName: string;
+
+  countSubjects: Array<CountSubject>;
+  selectedCountSubjectCount: number;
 
   constructor(private orderService: OrderService) { 
     
@@ -27,40 +31,68 @@ export class OrderComponent implements OnInit {
   ngOnInit() {
     this.orderService.queryPortraitKinds().subscribe(data => {
       this.portraitKinds = data;
-      this.selectedPortraitKindId = this.portraitKinds[0].id;
+      this.selectedPortraitKindName = this.portraitKinds[0].name;
     }, error => {
       console.log(error);
     });
 
     this.orderService.queryPortraitSizes().subscribe(data => {
       this.portraitSizes = data;
-      this.selectedPortraitSizeId = this.portraitSizes.find(size => size.name === 'A4').id;
+      this.selectedPortraitSizeName = this.portraitSizes.find(size => size.name === 'A4').name;
+    }, error => {
+      console.log(error);
+    });
+
+    this.orderService.queryCountSubjects().subscribe(data => {
+      this.countSubjects = data;
+      this.selectedCountSubjectCount = 1;
     }, error => {
       console.log(error);
     });
   }
 
-  private getPrice(portraitKindId?: number,
-                   portraitSizeId?: number): string {
+  private getPrice(portraitKindName?: string,
+                   portraitSizeName?: string,
+                   countSubjectCount?: number): string {
     let result: number = 0;
 
-    if(portraitKindId) {
-      const portraitKind = this.portraitKinds.find(f=> f.id === portraitKindId);
+    if(portraitKindName) {
+      const portraitKind = this.portraitKinds.find(f=> f.name === portraitKindName);
 
       if(portraitKind && portraitKind.price) {
         result += portraitKind.price;
       }
     }
 
-    if(portraitSizeId) {
-      const portraitSize = this.portraitSizes.find(f=> f.id == portraitSizeId);
+    if(portraitSizeName) {
+      const portraitSize = this.portraitSizes.find(f=> f.name == portraitSizeName);
 
       if(portraitSize && portraitSize.price) {
         result += portraitSize.price;
       }
     }
 
+    if(countSubjectCount) {
+      const countSubject = this.countSubjects.find(f=> f.count === countSubjectCount);
+
+      if(countSubject && countSubject.price) {
+        result += countSubject.price;
+      }
+    }
+
     return result.toFixed(2);
+  }
+
+  private getMin(portraitSizeName?: string): number {
+    const portraitSize = this.portraitSizes.find(f=> f.name == portraitSizeName);
+
+    return portraitSize.min_subjects;
+  }
+
+  private getMax(portraitSizeName?: string): number {
+    const portraitSize = this.portraitSizes.find(f=> f.name == portraitSizeName);
+
+    return portraitSize.max_subjects;
   }
 
 }

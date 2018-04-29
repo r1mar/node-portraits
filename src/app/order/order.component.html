@@ -12,20 +12,20 @@
 
   <mat-step label="Portrait-Typ beschreiben">
     <p>Welches Porträt möchten Sie? Sagen Sie es uns und wir sagen Ihnen direkt was es kosten würde.</p>
-    <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-list cols="2" rowHeight="4:1">
       <mat-grid-tile>
         <label for="price">Preis:</label>
       </mat-grid-tile>
       <mat-grid-tile>
-        <span id="price">{{getPrice(selectedPortraitKindId, selectedPortraitSizeId)}}</span>
+        <span id="price">{{getPrice(selectedPortraitKindName, selectedPortraitSizeName, selectedCountSubjectCount)}}</span>
       </mat-grid-tile>
 
       <mat-grid-tile>
         <label for="rgKind">Porträt-Typ:</label>
       </mat-grid-tile>
       <mat-grid-tile>
-        <mat-radio-group id="rgKind" [(ngModel)]="selectedPortraitKindId" required="true">
-          <mat-radio-button *ngFor="let portraitKind of portraitKinds" [value]="portraitKind.id">
+        <mat-radio-group id="rgKind" [(ngModel)]="selectedPortraitKindName" required="true">
+          <mat-radio-button *ngFor="let portraitKind of portraitKinds" [value]="portraitKind.name">
             {{portraitKind.name}}
           </mat-radio-button>
         </mat-radio-group>
@@ -35,11 +35,18 @@
         <label for="rgSize">Größe:</label>
       </mat-grid-tile>
       <mat-grid-tile>
-        <mat-radio-group id="rgSize" [(ngModel)]="selectedPortraitSizeId" required="true">
-          <mat-radio-button *ngFor="let portraitSize of portraitSizes" [value]="portraitSize.id">
+        <mat-radio-group id="rgSize" [(ngModel)]="selectedPortraitSizeName" required="true">
+          <mat-radio-button *ngFor="let portraitSize of portraitSizes" [value]="portraitSize.name">
             {{portraitSize.name}}
           </mat-radio-button>
         </mat-radio-group>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <label for="slCount">Anzahl Subjekte:</label>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-slider *ngIf="selectedPortraitKindName" min="{{getMin(selectedPortraitSizeName)}}" max="{{getMax(selectedPortraitSizeName)}}" step="1.0" [(ngModel)]="selectedCountSubjectCount" thumbLabel="true"></mat-slider>
       </mat-grid-tile>
     </mat-grid-list>
 
